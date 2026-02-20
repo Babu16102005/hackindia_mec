@@ -1,0 +1,244 @@
+.contact-section {
+  background: transparent;
+}
+
+.contact-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.contact-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-bottom: 50px;
+  animation: fadeInUp 0.6s ease;
+}
+
+.contact-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 30px;
+  margin-bottom: 30px;
+  transition: var(--transition-smooth);
+}
+
+.contact-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 30px;
+  margin-bottom: 30px;
+  transition: var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(0, 212, 255, 0.4);
+  box-shadow: 0 15px 40px rgba(0, 212, 255, 0.2), inset 0 0 20px rgba(16, 185, 129, 0.1);
+}
+
+.contact-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.contact-icon {
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  color: rgba(0, 212, 255, 0.7);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.contact-icon svg {
+  width: 1.8rem;
+  height: 1.8rem;
+  filter: drop-shadow(0 0 6px rgba(0, 212, 255, 0.3));
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.contact-card:hover .contact-icon {
+  color: #00d4ff;
+}
+
+.contact-card:hover .contact-icon svg {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 12px rgba(0, 212, 255, 0.8));
+}
+
+.contact-title {
+  font-size: 1.3rem;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.contact-details {
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+.contact-details p {
+  margin-bottom: 10px;
+}
+
+.contact-link {
+  color: var(--accent-cyan);
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
+.contact-link:hover {
+  color: var(--accent-blue);
+  text-decoration: underline;
+}
+
+/* Student Coordinators Section */
+.student-coordinators {
+  margin-top: 50px;
+  animation: fadeInUp 0.8s ease;
+}
+
+.coordinator-section-title {
+  font-size: 1.8rem;
+  color: var(--accent-cyan);
+  text-align: center;
+  margin-bottom: 40px;
+  font-weight: 600;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.coordinator-section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-green), var(--accent-blue), var(--accent-purple), var(--accent-rose));
+  border-radius: 2px;
+}
+
+.coordinators-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.coordinator-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 30px 20px;
+  text-align: center;
+  transition: var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+}
+
+.coordinator-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(0, 212, 255, 0.4);
+  box-shadow: 0 15px 40px rgba(0, 212, 255, 0.2), inset 0 0 20px rgba(16, 185, 129, 0.1);
+}
+
+.coordinator-icon {
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+  color: rgba(0, 212, 255, 0.7);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.coordinator-icon svg {
+  width: 2rem;
+  height: 2rem;
+  filter: drop-shadow(0 0 6px rgba(0, 212, 255, 0.3));
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.coordinator-card:hover .coordinator-icon {
+  color: #00d4ff;
+}
+
+.coordinator-card:hover .coordinator-icon svg {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 12px rgba(0, 212, 255, 0.8));
+}
+
+.coordinator-name {
+  font-size: 1.2rem;
+  color: var(--text-primary);
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.coordinator-phone {
+  color: var(--accent-cyan);
+  text-decoration: none;
+  font-size: 1rem;
+  transition: var(--transition-smooth);
+  display: inline-block;
+}
+
+.coordinator-phone:hover {
+  color: var(--accent-blue);
+  transform: scale(1.05);
+}
+
+.map-container {
+  animation: fadeInUp 0.8s ease;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 2px solid var(--border-color);
+  height: 400px;
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contact-info {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .coordinators-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .map-container {
+    height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-card {
+    padding: 20px;
+  }
+
+  .contact-icon {
+    font-size: 1.5rem;
+  }
+
+  .contact-title {
+    font-size: 1.1rem;
+  }
+}

@@ -1,0 +1,272 @@
+.schedule-section {
+  background: transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.schedule-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    radial-gradient(circle at 10% 20%, rgba(16, 185, 129, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 90% 80%, rgba(168, 85, 247, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.timeline-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* Day Section */
+.day-section {
+  animation: fadeInUp 0.8s ease;
+}
+
+.day-header {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 20px;
+  background: var(--card-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 12px;
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.day-header h3 {
+  font-size: 2rem;
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 8px;
+}
+
+.day-date {
+  color: var(--text-secondary);
+  font-size: 1rem;
+}
+
+/* Timeline */
+.timeline {
+  position: relative;
+  padding-left: 40px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 15px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--gradient-accent);
+}
+
+/* Timeline Item */
+.timeline-item {
+  position: relative;
+  margin-bottom: 30px;
+  animation: slideInLeft 0.6s ease backwards;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: -33px;
+  top: 8px;
+  width: 16px;
+  height: 16px;
+  background: var(--accent-blue);
+  border: 3px solid var(--primary-bg);
+  border-radius: 50%;
+  z-index: 1;
+  transition: var(--transition-smooth);
+}
+
+.timeline-item:nth-child(3n) .timeline-marker {
+  background: var(--accent-green);
+}
+
+.timeline-item:nth-child(3n+1) .timeline-marker {
+  background: var(--accent-rose);
+}
+
+.timeline-item:nth-child(3n+2) .timeline-marker {
+  background: var(--accent-purple);
+}
+
+.timeline-item.highlight .timeline-marker {
+  background: var(--accent-cyan);
+  box-shadow: 0 0 20px var(--accent-cyan);
+  animation: pulse 2s infinite;
+}
+
+.timeline-content {
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  transition: var(--transition-smooth);
+}
+
+.timeline-item:hover .timeline-content {
+  border-color: rgba(0, 212, 255, 0.4);
+  transform: translateX(10px) scale(1.02);
+  box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2), inset 0 0 15px rgba(16, 185, 129, 0.05);
+}
+
+.timeline-item:hover .timeline-marker {
+  transform: scale(1.5);
+  box-shadow: 0 0 20px var(--accent-cyan);
+}
+
+.timeline-time {
+  font-size: 0.9rem;
+  color: var(--accent-cyan);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.timeline-item:nth-child(4n) .timeline-time {
+  color: var(--accent-green);
+}
+
+.timeline-item:nth-child(4n+1) .timeline-time {
+  color: var(--accent-rose);
+}
+
+.timeline-item:nth-child(4n+2) .timeline-time {
+  color: var(--accent-purple);
+}
+
+.timeline-item:nth-child(4n+3) .timeline-time {
+  color: var(--accent-blue);
+}
+
+.timeline-event {
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.timeline-note {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-top: 5px;
+  font-style: italic;
+}
+
+.timeline-item.highlight .timeline-content {
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(16, 185, 129, 0.1));
+  border-color: rgba(0, 212, 255, 0.4);
+}
+
+/* Medical Assistance Note */
+.medical-note {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(5, 150, 105, 0.1));
+  border: 2px solid #10b981;
+  border-radius: 16px;
+  padding: 30px;
+  margin-top: 60px;
+  animation: fadeInUp 1s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.medical-note::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.2), transparent);
+  animation: shine 3s infinite;
+}
+
+.medical-icon {
+  font-size: 3rem;
+  display: flex;
+  align-items: center;
+  color: #10b981;
+  transition: all 0.3s ease;
+}
+
+.medical-icon svg {
+  width: 3rem;
+  height: 3rem;
+  filter: drop-shadow(0 0 10px rgba(16, 185, 129, 0.5));
+  animation: pulse 2s infinite;
+}
+
+.medical-content {
+  flex: 1;
+}
+
+.medical-title {
+  font-size: 1.5rem;
+  color: #10b981;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.medical-description {
+  color: var(--text-secondary);
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .timeline-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .medical-note {
+    flex-direction: column;
+    text-align: center;
+    padding: 25px;
+  }
+
+  .medical-icon {
+    font-size: 3rem;
+  }
+
+  .medical-title {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .timeline-container {
+    grid-template-columns: 1fr;
+  }
+
+  .day-header h3 {
+    font-size: 1.5rem;
+  }
+
+  .timeline {
+    padding-left: 30px;
+  }
+
+  .timeline-marker {
+    left: -28px;
+  }
+}

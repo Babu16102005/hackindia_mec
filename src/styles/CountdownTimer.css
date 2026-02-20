@@ -1,0 +1,140 @@
+/* Countdown Timer */
+.countdown-container {
+  margin-top: 60px;
+  text-align: center;
+  animation: fadeInUp 1s ease 1.2s backwards;
+}
+
+.countdown-title {
+  font-size: 1.5rem;
+  color: var(--text-secondary);
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 600;
+}
+
+.countdown-timer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.time-unit {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 16px;
+  padding: 20px 30px;
+  min-width: 120px;
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition-smooth);
+}
+
+.time-unit::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--gradient-accent);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.time-unit:hover::before {
+  opacity: 0.1;
+}
+
+.time-unit:hover {
+  transform: translateY(-4px) scale(1.05);
+  border-color: rgba(0, 212, 255, 0.4);
+  box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2), inset 0 0 15px rgba(16, 185, 129, 0.1);
+}
+
+.time-value {
+  font-size: 3rem;
+  font-weight: 800;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  margin-bottom: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.time-label {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+  position: relative;
+  z-index: 1;
+}
+
+.time-separator {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--accent-cyan);
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+
+  0%,
+  49% {
+    opacity: 1;
+  }
+
+  50%,
+  100% {
+    opacity: 0.3;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .time-unit {
+    min-width: 90px;
+    padding: 15px 20px;
+  }
+
+  .time-value {
+    font-size: 2.5rem;
+  }
+
+  .time-separator {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .countdown-timer {
+    gap: 10px;
+  }
+
+  .time-unit {
+    min-width: 70px;
+    padding: 12px 15px;
+  }
+
+  .time-value {
+    font-size: 2rem;
+  }
+
+  .time-label {
+    font-size: 0.75rem;
+  }
+
+  .time-separator {
+    font-size: 2rem;
+  }
+}

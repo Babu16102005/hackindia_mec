@@ -1,0 +1,452 @@
+.prizes-section {
+  background: transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.prizes-section::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.1) 0%, rgba(244, 63, 94, 0.05) 50%, transparent 70%);
+  animation: pulse 4s ease-in-out infinite;
+}
+
+.prizes-header {
+  text-align: center;
+  margin-bottom: 60px;
+  position: relative;
+  z-index: 1;
+}
+
+.prize-pool-total {
+  font-size: 4rem;
+  font-weight: 800;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 10px;
+  animation: pulse 2s infinite;
+  position: relative;
+  display: inline-block;
+}
+
+.prize-pool-total::before {
+  content: '₹25,000';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: blur(20px);
+  opacity: 0.5;
+  z-index: -1;
+}
+
+.prize-pool-label {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.prizes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.prize-card {
+  background: var(--card-bg);
+  border: 2px solid var(--border-color);
+  border-radius: 16px;
+  padding: 40px 30px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition-smooth);
+  animation: fadeInUp 0.6s ease backwards;
+}
+
+.prize-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-accent);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.prize-card:hover::before {
+  transform: scaleX(1);
+}
+
+.prize-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(0, 212, 255, 0.4);
+  box-shadow: 0 15px 40px rgba(0, 212, 255, 0.2), inset 0 0 20px rgba(16, 185, 129, 0.1);
+}
+
+.prize-card.first {
+  border-color: rgba(255, 215, 0, 0.6);
+}
+
+.prize-card.first:hover {
+  border-color: rgba(255, 215, 0, 0.9);
+  box-shadow: 0 15px 40px rgba(255, 215, 0, 0.2);
+}
+
+.prize-card.second {
+  border-color: rgba(192, 192, 192, 0.6);
+}
+
+.prize-card.second:hover {
+  border-color: rgba(192, 192, 192, 0.9);
+  box-shadow: 0 15px 40px rgba(192, 192, 192, 0.2);
+}
+
+.prize-card.third {
+  border-color: rgba(205, 127, 50, 0.6);
+}
+
+.prize-card.third:hover {
+  border-color: rgba(205, 127, 50, 0.9);
+  box-shadow: 0 15px 40px rgba(205, 127, 50, 0.2);
+}
+
+.prize-rank {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.prize-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: float 3s ease-in-out infinite;
+  position: relative;
+  z-index: 1;
+  color: rgba(0, 212, 255, 0.7);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.prize-icon svg {
+  width: 3rem;
+  height: 3rem;
+  filter: drop-shadow(0 0 8px rgba(0, 212, 255, 0.3));
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.prize-card.first .prize-icon {
+  color: rgba(255, 215, 0, 0.8);
+}
+
+.prize-card.first .prize-icon svg {
+  filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.3));
+}
+
+.prize-card.second .prize-icon {
+  color: rgba(192, 192, 192, 0.8);
+}
+
+.prize-card.second .prize-icon svg {
+  filter: drop-shadow(0 0 8px rgba(192, 192, 192, 0.3));
+}
+
+.prize-card.third .prize-icon {
+  color: rgba(205, 127, 50, 0.8);
+}
+
+.prize-card.third .prize-icon svg {
+  filter: drop-shadow(0 0 8px rgba(205, 127, 50, 0.3));
+}
+
+.prize-card:hover .prize-icon {
+  color: #00d4ff;
+}
+
+.prize-card:hover .prize-icon svg {
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 20px rgba(0, 212, 255, 0.8));
+}
+
+.prize-card.first:hover .prize-icon {
+  color: #ffd700;
+}
+
+.prize-card.first:hover .prize-icon svg {
+  filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.8));
+}
+
+.prize-card.second:hover .prize-icon {
+  color: #c0c0c0;
+}
+
+.prize-card.second:hover .prize-icon svg {
+  filter: drop-shadow(0 0 20px rgba(192, 192, 192, 0.8));
+}
+
+.prize-card.third:hover .prize-icon {
+  color: #cd7f32;
+}
+
+.prize-card.third:hover .prize-icon svg {
+  filter: drop-shadow(0 0 20px rgba(205, 127, 50, 0.8));
+}
+
+.prize-amount {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+}
+
+.prize-card.first .prize-amount {
+  color: #ffd700;
+}
+
+.prize-card.second .prize-amount {
+  color: #c0c0c0;
+}
+
+.prize-card.third .prize-amount {
+  color: #cd7f32;
+}
+
+.prize-card.third .prize-amount {
+  color: #cd7f32;
+}
+
+/* Bonus Prizes Section */
+.bonus-prizes-section {
+  margin-top: 80px;
+  position: relative;
+  z-index: 1;
+}
+
+.bonus-title {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 40px;
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+  position: relative;
+}
+
+.bonus-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: var(--gradient-accent);
+  border-radius: 2px;
+}
+
+.bonus-prizes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.bonus-prize-card {
+  background: var(--card-bg);
+  border: 2px solid var(--border-color);
+  border-radius: 16px;
+  padding: 40px 30px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition-smooth);
+  animation: fadeInUp 0.6s ease backwards;
+}
+
+.bonus-prize-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-accent);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.bonus-prize-card:hover::before {
+  transform: scaleX(1);
+}
+
+.bonus-prize-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(0, 212, 255, 0.4);
+  box-shadow: 0 15px 40px rgba(0, 212, 255, 0.2), inset 0 0 20px rgba(16, 185, 129, 0.1);
+}
+
+.bonus-prize-card.bonus-internship {
+  border-color: #10b981;
+}
+
+.bonus-prize-card.bonus-internship:hover {
+  border-color: #10b981;
+  box-shadow: 0 15px 50px rgba(16, 185, 129, 0.5);
+}
+
+.bonus-prize-card.bonus-crypto {
+  border-color: #f59e0b;
+}
+
+.bonus-prize-card.bonus-crypto:hover {
+  border-color: #f59e0b;
+  box-shadow: 0 15px 50px rgba(245, 158, 11, 0.5);
+}
+
+.bonus-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: float 3s ease-in-out infinite;
+  position: relative;
+  z-index: 1;
+  color: rgba(0, 212, 255, 0.7);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bonus-icon svg {
+  width: 3rem;
+  height: 3rem;
+  filter: drop-shadow(0 0 8px rgba(0, 212, 255, 0.3));
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bonus-prize-card.bonus-internship .bonus-icon {
+  color: rgba(16, 185, 129, 0.8);
+}
+
+.bonus-prize-card.bonus-internship .bonus-icon svg {
+  filter: drop-shadow(0 0 8px rgba(16, 185, 129, 0.3));
+}
+
+.bonus-prize-card.bonus-crypto .bonus-icon {
+  color: rgba(245, 158, 11, 0.8);
+}
+
+.bonus-prize-card.bonus-crypto .bonus-icon svg {
+  filter: drop-shadow(0 0 8px rgba(245, 158, 11, 0.3));
+}
+
+.bonus-prize-card:hover .bonus-icon {
+  color: #00d4ff;
+}
+
+.bonus-prize-card:hover .bonus-icon svg {
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 20px rgba(0, 212, 255, 0.8));
+}
+
+.bonus-prize-card.bonus-internship:hover .bonus-icon {
+  color: #10b981;
+}
+
+.bonus-prize-card.bonus-internship:hover .bonus-icon svg {
+  filter: drop-shadow(0 0 25px rgba(16, 185, 129, 0.9));
+}
+
+.bonus-prize-card.bonus-crypto:hover .bonus-icon {
+  color: #f59e0b;
+}
+
+.bonus-prize-card.bonus-crypto:hover .bonus-icon svg {
+  filter: drop-shadow(0 0 25px rgba(245, 158, 11, 0.9));
+}
+
+.bonus-prize-title {
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  font-weight: 700;
+  margin-bottom: 15px;
+  position: relative;
+  z-index: 1;
+}
+
+.bonus-prize-card.bonus-internship .bonus-prize-title {
+  color: #10b981;
+}
+
+.bonus-prize-card.bonus-crypto .bonus-prize-title {
+  color: #f59e0b;
+}
+
+.bonus-prize-description {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  position: relative;
+  z-index: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .prize-pool-total {
+    font-size: 3rem;
+  }
+
+  .prizes-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
+
+  .prize-amount {
+    font-size: 2rem;
+  }
+
+  .bonus-prizes-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .bonus-title {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .prizes-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bonus-prizes-grid {
+    grid-template-columns: 1fr;
+  }
+}

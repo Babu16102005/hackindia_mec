@@ -48,18 +48,35 @@ const Contact = () => {
               </div>
             </div>
 
-            <div className="contact-card">
+            <div className="contact-card staff-card">
               <div className="contact-header">
                 <span className="contact-icon"><FaUserTie /></span>
-                <h3 className="contact-title">Staff Coordinator</h3>
+                <h3 className="contact-title">Staff Coordinators</h3>
               </div>
-              <div className="contact-details">
-                <p><strong>Mr. K. Loganathan</strong></p>
-                <p>
-                  <a href="tel:+919994225662" className="contact-link">
-                    +91 99942 25662
-                  </a>
-                </p>
+              <div className="contact-details staff-coordinators-grid">
+                <div className="staff-coordinator">
+                  <p className="staff-name"><strong>Dr. S. Kalaivany (HOD)</strong></p>
+                  <p className="coordinator-role">Convenor</p>
+                  <p className="staff-contact">
+                    <a href="tel:+919486947802" className="contact-link">
+                      +91 94869 47802
+                    </a>
+                  </p>
+                  <p className="staff-contact">
+                    <a href="mailto:kalaivanyit@mailamengg.com" className="contact-link">
+                      kalaivanyit@mailamengg.com
+                    </a>
+                  </p>
+                </div>
+                <div className="staff-coordinator">
+                  <p className="staff-name"><strong>Mr. K. Loganathan</strong></p>
+                  <p className="coordinator-role">&nbsp;</p>
+                  <p className="staff-contact">
+                    <a href="tel:+919994225662" className="contact-link">
+                      +91 99942 25662
+                    </a>
+                  </p>
+                </div>
               </div>
             </div>
 

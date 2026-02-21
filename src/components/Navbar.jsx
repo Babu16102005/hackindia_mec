@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Home, Calendar, Trophy, FileText, Mail, Rocket } from 'lucide-react'
 import logoObj from '../assets/logo.png'
+import logoObj2 from '../assets/hackindia-logo.png'
 import '../styles/Navbar.css'
 
 const Navbar = () => {
@@ -27,7 +28,7 @@ const Navbar = () => {
     <nav className={`navbar-wrapper ${isScrolled ? 'scrolled' : ''}`}>
       <div className="navbar-pill">
         <a href="#home" className="navbar-logo" onClick={closeMenu}>
-          <img src={logoObj} alt="HackIndia Logo" className="logo-icon-img" />
+          <img src={logoObj} alt="Mailam Engineering College Logo" className="logo-icon-img" />
           <span className="logo-text">MAILAM ENGINEERING COLLEGE</span>
         </a>
 
@@ -55,6 +56,11 @@ const Navbar = () => {
         </div>
 
         <div className="navbar-actions">
+          <a href="#home" className="navbar-logo hackindia-logo" onClick={closeMenu}>
+            <img src={logoObj2} alt="HackIndia Logo" className="logo-icon-img" />
+            <span className="logo-text">HACKINDIA</span>
+          </a>
+
           <button className="navbar-cta-fancy" onClick={() => { closeMenu(); window.location.href = '#contact'; }}>
             <svg
               className="navbar-cta-svg"

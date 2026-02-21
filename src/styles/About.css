@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'Trxdxnt';
+  src: url('https://cdn.jsdelivr.net/gh/fontspace/trxdxnt@main/TrxdxntRegular-rg9Rx.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .about-section {
   padding: 100px 20px;
   background: transparent;
@@ -29,8 +36,22 @@
   text-align: center;
   font-size: 1.3rem;
   color: #00ffff;
-  margin-bottom: 60px;
+  margin-bottom: 15px;
   font-weight: 500;
+}
+
+.about-department {
+  text-align: center;
+  font-size: 1.5rem;
+  font-family: 'Trxdxnt', sans-serif;
+  background: linear-gradient(135deg, #00ffff, #00ccff, #0099ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 60px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
 .about-features {
@@ -160,6 +181,11 @@
 
   .about-subtitle {
     font-size: 1.1rem;
+  }
+
+  .about-department {
+    font-size: 1.1rem;
+    margin-bottom: 40px;
   }
 
   .about-features {

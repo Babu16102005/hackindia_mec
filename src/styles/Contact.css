@@ -3,32 +3,24 @@
 }
 
 .contact-container {
-  max-width: 1000px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
 .contact-info {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: 1fr 1fr 1.5fr;
   gap: 30px;
   margin-bottom: 50px;
   animation: fadeInUp 0.6s ease;
+  align-items: start;
 }
 
 .contact-card {
   background: var(--card-bg);
   border: 1px solid var(--border-color);
   border-radius: 12px;
-  padding: 30px;
-  margin-bottom: 30px;
-  transition: var(--transition-smooth);
-}
-
-.contact-card {
-  background: var(--card-bg);
-  border: 1px solid var(--border-color);
-  border-radius: 12px;
-  padding: 30px;
+  padding: 25px;
   margin-bottom: 30px;
   transition: var(--transition-smooth);
   position: relative;
@@ -73,9 +65,10 @@
 }
 
 .contact-title {
-  font-size: 1.3rem;
+  font-size: 1.25rem;
   color: var(--text-primary);
   font-weight: 600;
+  white-space: nowrap;
 }
 
 .contact-details {
@@ -85,6 +78,92 @@
 
 .contact-details p {
   margin-bottom: 10px;
+}
+
+.coordinator-role {
+  color: #00ffff;
+  font-style: italic;
+  font-size: 0.95rem;
+}
+
+.staff-coordinators-grid {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 16px;
+  width: 100%;
+  align-items: stretch;
+}
+
+@media (max-width: 768px) {
+  .staff-coordinators-grid {
+    flex-direction: column !important;
+  }
+}
+
+.staff-card .contact-details {
+  display: flex;
+}
+
+.staff-coordinator {
+  padding: 18px;
+  background: rgba(0, 255, 255, 0.05);
+  border-radius: 10px;
+  border: 1px solid rgba(0, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.staff-coordinator .staff-name {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+  min-height: unset;
+  display: flex;
+  align-items: center;
+}
+
+.staff-coordinator .staff-name strong {
+  color: #fff;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.staff-coordinator .coordinator-role {
+  color: #00ffff;
+  font-style: italic;
+  font-size: 0.95rem;
+  margin-bottom: 15px;
+  min-height: 28px;
+  display: block;
+}
+
+.staff-coordinator .staff-contact {
+  margin-bottom: 8px;
+  line-height: 1.5;
+  font-size: 0.9rem;
+}
+
+.staff-coordinator .staff-contact:last-child {
+  margin-bottom: 0;
+}
+
+.staff-coordinator .contact-link {
+  word-break: break-all;
+  font-size: 0.82rem;
+}
+
+.staff-coordinator .staff-contact a[href^="tel:"] {
+  white-space: nowrap;
+  font-size: 0.9rem;
+}
+
+.staff-coordinator:hover {
+  background: rgba(0, 255, 255, 0.1);
+  border-color: rgba(0, 255, 255, 0.4);
+  transform: translateY(-5px);
 }
 
 .contact-link {
@@ -201,9 +280,15 @@
 .map-container {
   animation: fadeInUp 0.8s ease;
   border-radius: 12px;
-  overflow: hidden;
   border: 2px solid var(--border-color);
   height: 400px;
+  width: 300px;
+  padding: 20px;
+  box-sizing: border-box;
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .map-container iframe {
@@ -213,6 +298,17 @@
 }
 
 /* Responsive Design */
+@media (max-width: 992px) {
+  .contact-info {
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+  }
+
+  .staff-card {
+    grid-column: 1 / -1;
+  }
+}
+
 @media (max-width: 768px) {
   .contact-info {
     grid-template-columns: 1fr;

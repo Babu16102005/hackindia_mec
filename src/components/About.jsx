@@ -11,7 +11,7 @@ const About = () => {
     {
       icon: '🎟️',
       title: 'Entry Fee',
-      description: 'Minimal registration fee to secure your spot and access premium resources.'
+      description: 'Registration fee: ₹250 per person. Secure your spot and access premium resources.'
     },
     {
       icon: '👥',
@@ -30,6 +30,7 @@ const About = () => {
       <div className="about-container">
         <h2 className="about-title">About HackIndia 2026</h2>
         <p className="about-subtitle">India's Premier Hackathon Experience</p>
+        <p className="about-department">Organized by Department of Information Technology</p>
 
         <div className="about-features">
           {features.map((feature, index) => (

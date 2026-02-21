@@ -14,6 +14,9 @@ const Hero = () => {
         <h1 className="hero-title" data-text="HackIndia Hackathon 2026">
           HackIndia Hackathon <span className="year">2026</span>
         </h1>
+        <div className="hero-department" data-text="DEPARTMENT OF INFORMATION TECHNOLOGY">
+          DEPARTMENT OF INFORMATION TECHNOLOGY
+        </div>
         <p className="hero-tagline">Innovate. Build. Impact.</p>
         <p className="hero-description">
           Join us for an incredible 24-hour hackathon at Mailam Engineering College.

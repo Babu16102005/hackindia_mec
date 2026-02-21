@@ -28,7 +28,7 @@ const Navbar = () => {
       <div className="navbar-pill">
         <a href="#home" className="navbar-logo" onClick={closeMenu}>
           <img src={logoObj} alt="HackIndia Logo" className="logo-icon-img" />
-          <span className="logo-text">HackIndia</span>
+          <span className="logo-text">MAILAM ENGINEERING COLLEGE</span>
         </a>
 
         <div className={`navbar-menu ${isMenuOpen ? 'active' : ''}`}>

@@ -25,9 +25,9 @@ const Hero = () => {
             <span className="scanner-line"></span>
             <span style={{ position: 'relative', zIndex: 2 }}>Register Now</span>
           </a>
-          <a href="#schedule" className="btn btn-secondary">
+          <a href="/brochure.pdf" download className="btn btn-secondary">
             <span className="scanner-line"></span>
-            <span style={{ position: 'relative', zIndex: 2 }}>View Schedule</span>
+            <span style={{ position: 'relative', zIndex: 2 }}>Download Brochure</span>
           </a>
         </div>
 

@@ -25,25 +25,27 @@ const ShaderPlane = ({
     const meshRef = useRef<THREE.Mesh>(null);
     const { size } = useThree();
 
+    const shaderMaterial = useMemo(
+        () =>
+            new THREE.ShaderMaterial({
+                vertexShader,
+                fragmentShader,
+                uniforms,
+                side: THREE.FrontSide,
+                depthTest: false,
+                depthWrite: false,
+            }),
+        [vertexShader, fragmentShader, uniforms],
+    );
+
     useFrame((state) => {
-        if (meshRef.current) {
-            const material = meshRef.current.material as THREE.ShaderMaterial;
-            material.uniforms.u_time.value = state.clock.elapsedTime * 0.5;
-            material.uniforms.u_resolution.value.set(size.width, size.height, 1.0);
-        }
+        shaderMaterial.uniforms.u_time.value = state.clock.elapsedTime * 0.5;
+        shaderMaterial.uniforms.u_resolution.value.set(size.width, size.height, 1.0);
     });
 
     return (
-        <mesh ref={meshRef}>
+        <mesh ref={meshRef} material={shaderMaterial}>
             <planeGeometry args={[2, 2]} />
-            <shaderMaterial
-                vertexShader={vertexShader}
-                fragmentShader={fragmentShader}
-                uniforms={uniforms}
-                side={THREE.FrontSide}
-                depthTest={false}
-                depthWrite={false}
-            />
         </mesh>
     );
 };

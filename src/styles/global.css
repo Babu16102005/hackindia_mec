@@ -165,49 +165,113 @@ section {
 
 .btn {
   display: inline-block;
-  padding: 18px 50px;
-  font-size: 1.2rem;
-  font-weight: 800;
+  padding: 16px 45px;
+  font-size: 1.1rem;
+  font-weight: 700;
   text-decoration: none;
-  border-radius: 50px;
+  border-radius: 8px;
+  /* Slightly squarer for tech feel */
   cursor: pointer;
-  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   text-align: center;
   position: relative;
   overflow: hidden;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  background: linear-gradient(135deg, #10b981 0%, #00d4ff 100%);
-  background-size: 200% 200%;
-  animation: gradientShift 4s ease infinite;
+  letter-spacing: 3px;
+  background: rgba(10, 10, 15, 0.5);
+  /* Glassmorphism base */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   z-index: 1;
-  box-shadow: 0 8px 32px rgba(16, 185, 129, 0.35);
+  color: #fff;
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.1);
 }
 
+/* Glowing pseudo-border that shifts colors */
 .btn::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: -100%;
-  width: 60%;
-  height: 100%;
-  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  transition: left 0.6s ease;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #10b981, #00d4ff, #10b981, #00d4ff);
+  background-size: 400%;
   z-index: -1;
+  animation: gradientShift 4s ease infinite;
+  opacity: 0;
+  /* Hidden until hover */
+  transition: opacity 0.4s ease;
+  border-radius: 9px;
 }
 
-.btn:hover::before {
-  left: 150%;
+/* Base button interior (covers the gradient so only border shows) */
+.btn::after {
+  content: '';
+  position: absolute;
+  inset: 1px;
+  background: rgba(10, 10, 15, 0.85);
+  border-radius: 7px;
+  backdrop-filter: blur(16px);
+  z-index: -1;
+  transition: background 0.4s ease;
+}
+
+/* Scanning tech laser line */
+.btn-primary .scanner-line,
+.btn-secondary .scanner-line {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.6), transparent);
+  transform: skewX(-20deg);
+  z-index: 0;
+  pointer-events: none;
+  animation: scanLine 3s infinite cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+@keyframes scanLine {
+  0% {
+    left: -100%;
+  }
+
+  50% {
+    left: 200%;
+  }
+
+  100% {
+    left: 200%;
+  }
 }
 
 .btn-primary {
-  color: #ffffff;
+  border-color: rgba(16, 185, 129, 0.4);
 }
 
-.btn-primary:hover {
-  transform: translateY(-5px) scale(1.05);
-  box-shadow: 0 15px 40px rgba(16, 185, 129, 0.5), 0 0 20px rgba(0, 212, 255, 0.3);
+.btn-secondary {
+  border-color: rgba(0, 212, 255, 0.4);
+}
+
+.btn:hover {
+  transform: translateY(-3px) scale(1.02);
+  letter-spacing: 4px;
+  /* Text expands slightly on hover */
+  box-shadow: 0 15px 30px rgba(0, 212, 255, 0.2);
+}
+
+.btn:hover::before {
+  opacity: 1;
+  /* Reveal full glowing animated border */
+  filter: blur(8px);
+  /* Bleeds out like neon */
+}
+
+.btn:hover::after {
+  background: rgba(10, 10, 15, 0.7);
+  /* Slightly brighter glass on hover */
 }
 
 /* Card Styles */

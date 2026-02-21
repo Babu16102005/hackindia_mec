@@ -45,6 +45,9 @@ const Footer = () => {
         <div className="footer-bottom">
           <p>&copy; {currentYear} HackIndia Hackathon. All rights reserved.</p>
           <p>Organized by Mailam Engineering College</p>
+          <p className="footer-credit">
+            Designed and Built by <a href="https://dhivagar130506.netlify.app/" target="_blank" rel="noopener noreferrer" className="dev-link">Dhivagar</a> &amp; <a href="https://babu16101005.netlify.app" target="_blank" rel="noopener noreferrer" className="dev-link">Babu</a>
+          </p>
         </div>
       </div>
     </footer>

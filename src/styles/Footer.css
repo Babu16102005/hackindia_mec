@@ -1,7 +1,16 @@
 .footer {
-  background: transparent;
-  border-top: 1px solid var(--border-color);
+  background: rgba(10, 10, 15, 0.4);
+  /* Darker semi-transparent base */
+  backdrop-filter: blur(24px);
+  /* Strong blur effect */
+  -webkit-backdrop-filter: blur(24px);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  /* Subtle crisp edge */
   padding: 60px 20px 30px;
+  box-shadow: 0 -20px 40px rgba(0, 0, 0, 0.4);
+  /* Lifted shadow */
+  position: relative;
+  z-index: 10;
 }
 
 .footer-content {
@@ -112,6 +121,34 @@
 .footer-bottom p {
   margin: 5px 0;
   font-size: 0.9rem;
+}
+
+.footer-credit {
+  margin-top: 16px !important;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 1rem !important;
+  letter-spacing: 0.05em;
+  color: #fff;
+  position: relative;
+  display: inline-block;
+}
+
+.dev-link {
+  color: #00d4ff;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.dev-link:hover {
+  color: #10b981;
+  text-shadow: 0 0 10px rgba(16, 185, 129, 0.8), 0 0 20px rgba(16, 185, 129, 0.4);
+  transform: translateY(-2px);
 }
 
 /* Responsive Design */

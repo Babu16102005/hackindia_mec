@@ -1,13 +1,13 @@
 .footer {
-  background: rgba(10, 10, 15, 0.4);
+  background: linear-gradient(to top, rgba(10, 10, 15, 0.8) 0%, rgba(255, 255, 255, 0.1) 100%);
   /* Darker semi-transparent base */
-  backdrop-filter: blur(24px);
+  backdrop-filter: blur(50px) saturate(200%);
   /* Strong blur effect */
-  -webkit-backdrop-filter: blur(24px);
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  -webkit-backdrop-filter: blur(50px) saturate(200%);
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
   /* Subtle crisp edge */
   padding: 60px 20px 30px;
-  box-shadow: 0 -20px 40px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 -15px 40px rgba(0, 0, 0, 0.5), inset 0 2px 10px rgba(255, 255, 255, 0.2), inset 0 -2px 10px rgba(0, 0, 0, 0.1);
   /* Lifted shadow */
   position: relative;
   z-index: 10;

@@ -106,38 +106,41 @@
 /* Responsive Design */
 @media (max-width: 768px) {
   .time-unit {
-    min-width: 90px;
-    padding: 15px 20px;
+    min-width: 80px;
+    padding: 10px 15px;
   }
 
   .time-value {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 
   .time-separator {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 }
 
 @media (max-width: 480px) {
   .countdown-timer {
-    gap: 10px;
+    gap: 4px;
   }
 
   .time-unit {
-    min-width: 70px;
-    padding: 12px 15px;
+    min-width: 60px;
+    padding: 8px 10px;
   }
 
   .time-value {
-    font-size: 2rem;
+    font-size: 1.5rem;
+    margin-bottom: 5px;
   }
 
   .time-label {
-    font-size: 0.75rem;
+    font-size: 0.65rem;
+    letter-spacing: 1px;
   }
 
   .time-separator {
-    font-size: 2rem;
+    font-size: 1.5rem;
+    margin: 0 -2px;
   }
 }

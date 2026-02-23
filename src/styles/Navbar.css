@@ -332,19 +332,17 @@
 }
 
 /* Mobile Responsive */
-@media (max-width: 992px) {
-  .navbar-menu {
-    gap: 20px;
-  }
+.navbar-mobile-cta {
+  display: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .hamburger {
     display: flex;
   }
 
   .navbar-pill {
-    padding: 12px 8px;
+    padding: 12px 16px;
     border-radius: 24px;
   }
 
@@ -353,16 +351,24 @@
   }
 
   .logo-text {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
   }
 
   .logo-icon-img {
-    width: 26px;
-    margin-right: 6px;
+    width: 28px;
+    margin-right: 8px;
   }
 
   .hackindia-logo {
     display: none;
+  }
+
+  .navbar-actions>.navbar-cta-fancy {
+    display: block;
+    transform: scale(0.8);
+    transform-origin: right center;
+    margin-right: 5px;
+    /* Added gap between button and hamburger */
   }
 
   .navbar-menu {
@@ -370,28 +376,21 @@
     top: 80px;
     left: 20px;
     right: 20px;
-    background: rgba(10, 10, 15, 0.7);
-    /* Deep dark semi-transparent tint */
+    background: rgba(10, 10, 15, 0.9);
     backdrop-filter: blur(40px);
-    /* Very strong blur */
     -webkit-backdrop-filter: blur(40px);
     border: 1px solid rgba(255, 255, 255, 0.15);
-    /* Brighter glass edge */
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    /* Faded bottom edge */
     border-right: 1px solid rgba(255, 255, 255, 0.05);
-    /* Faded right edge */
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(255, 255, 255, 0.05);
-    /* Outer and inner glowing edge */
     border-radius: 20px;
     flex-direction: column;
     padding: 30px 0;
-    gap: 20px;
+    gap: 15px;
     opacity: 0;
     visibility: hidden;
     transform: translateY(-10px);
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    /* Smoother opening timing */
   }
 
   .navbar-menu.active {
@@ -402,5 +401,53 @@
 
   .navbar-link {
     margin: 0 auto;
+    width: 220px;
+    justify-content: flex-start;
+    padding-left: 20px;
+  }
+
+  .navbar-link:hover {
+    width: 240px;
+  }
+
+  .navbar-link-title {
+    position: static;
+    transform: scale(1);
+    margin-left: 15px;
+    font-size: 1rem;
+  }
+
+  .navbar-link-icon {
+    position: static;
+    transform: scale(1);
+    color: #fff;
+  }
+
+  .navbar-link:hover .navbar-link-icon {
+    transform: scale(1.1);
+  }
+
+  .navbar-mobile-cta {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-text {
+    display: none;
+  }
+
+  .logo-icon-img {
+    margin-right: 0;
+  }
+
+  .navbar-pill {
+    padding: 10px 12px;
+  }
+
+  .navbar-actions>.navbar-cta-fancy {
+    transform: scale(0.65);
+    margin-right: -10px;
+    /* Reduced negative margin to maintain gap on very small screens */
   }
 }

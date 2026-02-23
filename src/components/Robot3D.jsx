@@ -11,7 +11,17 @@ const RobotModel = () => {
     const [collada, setCollada] = useState(null);
 
     useEffect(() => {
-        const loader = new ColladaLoader();
+        // Suppress texture loading errors by overriding the texture loader
+        const manager = new THREE.LoadingManager();
+        manager.setURLModifier((url) => {
+            if (url.endsWith('.jpg') || url.endsWith('.png')) {
+                // Return a 1x1 transparent image data URL to prevent 404 on textures
+                return 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=';
+            }
+            return url;
+        });
+
+        const loader = new ColladaLoader(manager);
         loader.load(colladaUrl, (result) => {
             // Traverse the loaded model to apply a custom premium material
             result.scene.traverse((child) => {
@@ -28,6 +38,8 @@ const RobotModel = () => {
                 }
             });
             setCollada(result);
+        }, undefined, (error) => {
+            console.warn('Error loading 3D model, continuing without it.', error);
         });
     }, []);
 
